@@ -1,0 +1,103 @@
+  :root {
+    --white: #FFFFFF;
+    --snow: #F4F8F5;
+    --ink: #1A2721;
+    --slate: #41534A;
+    --muted: #6A7C72;
+    --navy: #143D2C;
+    --blue: #2C6E49;
+    --rule: #D5E2D9;
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  /* Type scale is rem-based, so the whole page scales from this one value. */
+  html { scroll-behavior: smooth; font-size: 118.75%; }
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav { background: var(--white); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 100; }
+  .nav-inner { max-width: 880px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+  .nav-name { font-family: var(--serif); font-size: 1.15rem; color: var(--navy); text-decoration: none; padding: 0.9rem 0; font-weight: 700; }
+  .nav-links { list-style: none; display: flex; }
+  .nav-links a { display: block; padding: 0.9rem 1rem; color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--navy); }
+
+  .hero { min-height: calc(100vh - 50px); display: flex; align-items: center; justify-content: center; padding: 3rem 2rem; }
+  .hero-grid { max-width: 880px; width: 100%; display: grid; grid-template-columns: 290px 1fr; gap: 2.5rem; align-items: center; }
+  .photo-frame { width: 290px; height: 360px; background: var(--snow); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-text h1 { font-family: var(--serif); font-size: 2.3rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+  .hero-text .affiliation { font-size: 1.05rem; color: var(--blue); margin-bottom: 1.3rem; }
+  .hero-text .bio { font-size: 1rem; color: var(--slate); line-height: 1.75; margin-bottom: 1rem; text-align: justify; }
+  .hero-text .job-market { font-size: 1rem; color: var(--ink); font-weight: 700; margin-bottom: 1rem; }
+  .hero-text .references { font-size: 0.92rem; color: var(--slate); line-height: 1.7; margin-bottom: 0.8rem; }
+  .hero-text .references a { color: var(--blue); text-decoration: none; }
+  .hero-text .references a:hover { text-decoration: underline; }
+  .hero-contact { margin-top: 0.5rem; font-size: 0.92rem; color: var(--muted); }
+  .hero-contact strong { font-weight: 700; color: var(--slate); }
+  .hero-contact a { color: var(--blue); text-decoration: none; }
+  .hero-contact a:hover { text-decoration: underline; }
+
+  main { max-width: 880px; margin: 0 auto; padding: 0 2rem 4rem; }
+  section { padding: 2.5rem 0 2rem; border-top: 1px solid var(--rule); }
+  h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 1.4rem; }
+
+  .pub-category { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-top: 1.8rem; margin-bottom: 0.6rem; }
+  .pub-category:first-of-type { margin-top: 0; }
+  .pub-entry { padding: 0.8rem 0; }
+  .pub-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; color: var(--ink); line-height: 1.5; }
+  .pub-status { font-size: 0.85em; color: var(--muted); white-space: nowrap; }
+  .pub-authors { font-size: 0.9rem; color: var(--muted); margin-top: 0.2rem; }
+  .pub-authors a { color: var(--blue); text-decoration: none; }
+  .pub-authors a:hover { text-decoration: underline; }
+  .pub-venue { font-size: 0.9rem; color: var(--muted); font-style: italic; margin-top: 0.15rem; }
+  .pub-abstract { font-size: 0.9rem; color: var(--slate); line-height: 1.7; margin-top: 0.6rem; padding: 0.6rem 0 0.2rem 1.1rem; border-left: 2px solid var(--rule); display: none; text-align: justify; }
+  .pub-abstract.open { display: block; }
+  .pub-links { margin-top: 0.4rem; display: flex; gap: 0.9rem; align-items: center; flex-wrap: wrap; }
+  .pub-link { font-size: 0.85rem; color: var(--blue); text-decoration: none; cursor: pointer; background: none; border: none; font-family: var(--sans); padding: 0; transition: color 0.2s; }
+  .pub-link:hover { text-decoration: underline; }
+  .pub-media { margin-top: 0.45rem; font-size: 0.85rem; color: var(--muted); }
+  .pub-media strong { font-weight: 600; color: var(--slate); }
+  .pub-media a { color: var(--blue); text-decoration: none; }
+  .pub-media a:hover { text-decoration: underline; }
+
+  .contact-block p { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.4rem; }
+  .contact-block a { color: var(--blue); text-decoration: none; }
+  .contact-block a:hover { text-decoration: underline; }
+
+  footer { text-align: center; padding: 2rem; font-size: 0.85rem; color: var(--muted); max-width: 880px; margin: 0 auto; }
+  footer a { color: var(--blue); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .flag-link { display: inline-block; vertical-align: middle; margin-left: 0.4rem; line-height: 0; }
+  .flag-link svg { width: 20px; height: 14px; }
+  .flag-link .flag-fr { display: none; }
+  .flag-link.is-fr .flag-br { display: none; }
+  .flag-link.is-fr .flag-fr { display: inline; }
+
+  @media (max-width: 640px) {
+    html { font-size: 112.5%; }
+    .hero-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+    .hero-text .bio { text-align: left; }
+    .hero-text h1 { font-size: 1.9rem; }
+    .nav-name { font-size: 1.05rem; }
+    .nav-links a { padding: 0.8rem 0.55rem; font-size: 0.82rem; }
+  }
+
+  /* --- multi-page additions --- */
+  .nav-links a.active { color: var(--navy); }
+  main.page > section:first-child { border-top: none; }
+
+  .pdf-frame { border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; background: var(--snow); }
+  .pdf-frame iframe { display: block; width: 100%; height: 82vh; border: 0; }
+  .pdf-note { margin-top: 0.9rem; font-size: 0.9rem; color: var(--muted); }
+  .pdf-note a { color: var(--blue); text-decoration: none; }
+  .pdf-note a:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .pdf-frame iframe { height: 60vh; }
+  }
